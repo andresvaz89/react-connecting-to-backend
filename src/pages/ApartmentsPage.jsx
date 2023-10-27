@@ -1,5 +1,3 @@
-// src/pages/ApartmentsPage.js
-
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -21,7 +19,7 @@ function ApartmentsPage() {
           <div key={apartment._id}>
             <h3>{apartment.title}</h3>
             <img src={apartment.img} alt="apartment" />
-            <p>Price: {apartment.pricePerDay}</p>
+            <p>Price: {apartment.pricePerDay} €</p>
           </div>
         );
       })}
