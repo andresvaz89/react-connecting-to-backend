@@ -18,7 +18,7 @@ function AddApartmentPage() {
         img,
         pricePerDay: price
       })
-      .then(() => navigate('/'));
+      .then((response) => navigate(`/apartments/${response.data._id}`));
   };
 
   return (

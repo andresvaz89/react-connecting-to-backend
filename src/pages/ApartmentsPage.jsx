@@ -17,7 +17,7 @@ function ApartmentsPage() {
       <h3>List of apartments</h3>
       <br />
       {apartments.map((apartment) => {
-        return <Apartment apartment={apartment} />;
+        return <Apartment key={apartment._id} apartment={apartment} />;
       })}
     </div>
   );
