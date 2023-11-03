@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
+import Apartment from '../components/Apartment';
+
 function ApartmentsPage() {
   const [apartments, setApartments] = useState([]);
 
@@ -15,13 +17,7 @@ function ApartmentsPage() {
       <h3>List of apartments</h3>
       <br />
       {apartments.map((apartment) => {
-        return (
-          <div key={apartment._id}>
-            <h3>{apartment.title}</h3>
-            <img src={apartment.img} alt="apartment" />
-            <p>Price: {apartment.pricePerDay} €</p>
-          </div>
-        );
+        return <Apartment apartment={apartment} />;
       })}
     </div>
   );
