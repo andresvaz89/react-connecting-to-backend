@@ -9,10 +9,16 @@ router.get('/', (req, res, next) => {
 });
 
 router.post('/', (req, res) => {
-  //const newApartment = req.body;
+  // const newApartment = req.body;
 
   Apartment.create(req.body)
     .then((newApartment) => res.json(newApartment))
+    .catch((err) => console.error(err));
+});
+
+router.get('/:id', (req, res) => {
+  Apartment.findById(req.params.id)
+    .then((apartment) => res.json(apartment))
     .catch((err) => console.error(err));
 });
 
